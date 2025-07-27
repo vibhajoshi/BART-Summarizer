@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Summary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="summary-page">
+    <div class="container">
+        <a href="javascript:history.back()" class="back-btn">← Back to Articles</a>
+        
+        <div class="summary-card">
+            {% if image_url %}
+            <img src="{{ image_url }}" alt="{{ title }}" onerror="this.src='{{ url_for('static', filename='images/default-news.jpg') }}'">
+            {% else %}
+            <img src="{{ url_for('static', filename='images/default-news.jpg') }}" alt="Default News Image">
+            {% endif %}
+            
+            <h1>{{ title }}</h1>
+            
+            <div class="summary-content">
+                <h3>Summary</h3>
+                <p>{{ summary }}</p>
+            </div>
+            
+            <div class="summary-actions">
+                <a href="{{ request.args.get('url') }}" target="_blank" class="btn read-full-btn">Read Full Article</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Articles - {{ category.capitalize() }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="articles-page">
+    <div class="container">
+        <h1>{{ category.capitalize() }} News ({{ region.capitalize() }})</h1>
+        <a href="{{ url_for('index') }}" class="back-btn">← Back to Home</a>
+        
+        <div class="articles-grid">
+            {% for article in articles %}
+            <div class="article-card">
+                {% if article.image_url %}
+                <img src="{{ article.image_url }}" alt="{{ article.title }}" onerror="this.src='{{ url_for('static', filename='images/default-news.jpg') }}'">
+                {% else %}
+                <img src="{{ url_for('static', filename='images/default-news.jpg') }}" alt="Default News Image">
+                {% endif %}
+                <h3>{{ article.title }}</h3>
+                <div class="article-actions">
+                    <a href="{{ article.url }}" target="_blank" class="btn read-btn">Read Article</a>
+                    <a href="{{ url_for('summary', url=article.url, title=article.title, image_url=article.image_url) }}" class="btn summary-btn">Summarize</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

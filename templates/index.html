@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Summarizer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="home-page">
+    <div class="container">
+        <div class="selection-box">
+            <h1>News Summarizer</h1>
+            <p>Select region and category to explore news</p>
+            
+            <form action="/articles" method="POST">
+                <div class="form-group">
+                    <label for="region">Region:</label>
+                    <select id="region" name="region" required>
+                        <option value="">-- Select Region --</option>
+                        <option value="india">India</option>
+                        <option value="international">International</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="category">Category:</label>
+                    <select id="category" name="category" required>
+                        <option value="">-- Select Category --</option>
+                        <option value="general">General</option>
+                        <option value="politics">Politics</option>
+                        <option value="technology">Technology</option>
+                        <option value="sports">Sports</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn">Explore News</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
