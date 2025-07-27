@@ -22,12 +22,19 @@ A Flask-based web app that fetches the latest news articles from RSS feeds and p
 ## 📸 Screenshots
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ba3791eb-b764-4f39-83ef-f93fa12985ae" />
+
 Page UI
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6f5c446e-d45a-4b55-ad07-b41264a15665" />
 Select India from dropdown
 Select General
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6f5c446e-d45a-4b55-ad07-b41264a15665" />
-This is the generated news
+
+
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6d0ba70b-360f-49d6-8e43-9cf9b7b89d7d" />
+This is the generated news
+
+
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/76f43002-e03f-41c5-a9b7-ca4d9812a968" />
 
 
@@ -55,7 +62,7 @@ pip install -r requirements.txt
 pip install flask feedparser beautifulsoup4 sumy scikit-learn nltk
 python -c "import nltk; nltk.download('punkt')"
 ```
-###5. Run the app
+### 5. Run the app
 ```bash
 python app.py
 ```
